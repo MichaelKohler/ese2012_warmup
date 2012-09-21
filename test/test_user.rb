@@ -4,12 +4,10 @@ require "app/market/item"
 
 class UserTest < Test::Unit::TestCase
 
-  attr_accessor :user, :itemToBuy, :previousOwner
-
-  def setup
-    user = Market::User.named_credit("John", 200)
-    itemToBuy = Market::Item.named_priced("itemToBuy", 50)
-    previousOwner = Market::User.named("Jim")
+  def startup
+    @@user = Market::User.named_credit("John", 200)
+    @@itemToBuy = Market::Item.named_priced("itemToBuy", 50)
+    @@previousOwner = Market::User.named("Jim")
     user
   end
 

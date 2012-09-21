@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="f694ca81-7975-4da7-8a80-3c2468037c3a" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/market/item.rb" afterPath="$PROJECT_DIR$/app/market/item.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/market/user.rb" afterPath="$PROJECT_DIR$/app/market/user.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/test_item.rb" afterPath="$PROJECT_DIR$/test/test_item.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/test_user.rb" afterPath="$PROJECT_DIR$/test/test_user.rb" />
@@ -28,34 +27,25 @@
       <file leaf-file-name="user.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/market/user.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="59" column="51" selection-start="1914" selection-end="1914" vertical-scroll-proportion="0.0">
+            <state line="19" column="32" selection-start="834" selection-end="834" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="testrunner.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$APPLICATION_HOME_DIR$/rb/testing/patch/testunit/test/unit/ui/teamcity/testrunner.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="80" column="0" selection-start="2329" selection-end="2329" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="test_item.rb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="test_item.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test/test_item.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="34" column="0" selection-start="738" selection-end="738" vertical-scroll-proportion="2.642487">
+            <state line="8" column="6" selection-start="188" selection-end="188" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="test_user.rb" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="test_user.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test/test_user.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="81" column="17" selection-start="2502" selection-end="2510" vertical-scroll-proportion="-22.924528">
+            <state line="10" column="61" selection-start="295" selection-end="295" vertical-scroll-proportion="0.3472222">
               <folding />
             </state>
           </provider>
@@ -64,7 +54,7 @@
       <file leaf-file-name="item.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/market/item.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="28" column="10" selection-start="648" selection-end="648" vertical-scroll-proportion="0.0">
+            <state line="19" column="45" selection-start="516" selection-end="516" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -372,11 +362,11 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26136363" sideWeight="0.34824282" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26136363" sideWeight="0.73003197" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.6517572" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26996806" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -440,13 +430,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/market/user.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="56" column="0" selection-start="1829" selection-end="1829" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/market/item.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="28" column="10" selection-start="648" selection-end="648" vertical-scroll-proportion="0.0">
@@ -517,37 +500,37 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/test_user.rb">
+    <entry file="file://$PROJECT_DIR$/app/market/user.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="81" column="17" selection-start="2502" selection-end="2510" vertical-scroll-proportion="-22.924528">
+        <state line="19" column="32" selection-start="834" selection-end="834" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/market/item.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="10" selection-start="648" selection-end="648" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/market/user.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="59" column="51" selection-start="1914" selection-end="1914" vertical-scroll-proportion="0.0">
+        <state line="19" column="45" selection-start="516" selection-end="516" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$APPLICATION_HOME_DIR$/rb/testing/patch/testunit/test/unit/ui/teamcity/testrunner.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="80" column="0" selection-start="2329" selection-end="2329" vertical-scroll-proportion="0.0">
+        <state line="80" column="0" selection-start="2329" selection-end="2329" vertical-scroll-proportion="0.33333334">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test/test_item.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="0" selection-start="738" selection-end="738" vertical-scroll-proportion="2.642487">
+        <state line="8" column="6" selection-start="188" selection-end="188" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/test_user.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="61" selection-start="295" selection-end="295" vertical-scroll-proportion="0.3472222">
           <folding />
         </state>
       </provider>

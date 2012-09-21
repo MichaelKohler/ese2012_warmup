@@ -32,6 +32,11 @@ module Market
       user
     end
 
+    # initialize the items array
+    def initialize
+      items = Array.new
+    end
+
     # increase the balance
     # @param [Numeric] amount - amount to be added
     def increaseCredit(amount)

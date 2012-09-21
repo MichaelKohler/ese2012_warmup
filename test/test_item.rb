@@ -1,13 +1,12 @@
 require "test/unit"
 require "app/market/item"
+require "app/market/user"
 
 class ItemTest < Test::Unit::TestCase
 
-  attr_accessor :item, :owner
-
-  def setup
-    item = Market::Item.named_priced("testItem", 100)
-    owner = Market::User.named("John")
+  def startup
+    @@item = Market::Item.named_priced("testItem", 100)
+    @@owner = Market::User.named("John")
     item.owner = owner
     item.active = true
     item
