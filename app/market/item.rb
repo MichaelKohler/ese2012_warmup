@@ -21,12 +21,12 @@ module Market
 
     # activate the item
     def activate
-      item.active = true
+      self.active = true
     end
 
     # deactivate the item
     def inactivate
-      item.active = false
+      self.active = false
     end
   end
 end

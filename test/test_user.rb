@@ -4,6 +4,8 @@ require "app/market/item"
 
 class UserTest < Test::Unit::TestCase
 
+  attr_accessor :user, :itemToBuy, :previousOwner
+
   def setup
     user = Market::User.named_credit("John", 200)
     itemToBuy = Market::Item.named_priced("itemToBuy", 50)
@@ -38,30 +40,29 @@ class UserTest < Test::Unit::TestCase
     # list is empty now
     assert(user.get_sell_items.length == 0, "sell list is not empty")
     someItem = Market::Item.named_priced("someItem", 300)
+    someItem.owner = previousOwner
     user.add_item(someItem)
     assert(user.get_sell_items.include?(someItem), "item was not added!")
   end
 
   def test_ListAllSellItems
     otherItem = Market::Item.named_priced("otherItem", 50)
+    otherItem.owner = previousOwner
     user.add_item(otherItem);
     # list test_ have 2 sell items now
     assert(user.get_sell_items.length == 2, "there are not 2 items in the sell list!")
-    assert(user.get_sell_items.include?(someItem), "someItem is not in the sell list!")
     assert(user.get_sell_items.include?(otherItem), "otherItem is not in the sell list!")
   end
 
   def test_FailIfNotEnoughCredit
-    itemToBuy = Market::Item.named_priced("itemToSell", 500)
-    user.buy_item(itemToBuy)
-    # list test_ be still still be 0, since we couldn't buy the first item now
-    assert(user.get_items.length == 1, "user was able to buy too expensive item!")
+    itemToBuy.price = 500
+    assert(!user.buy_item?(itemToBuy), "user was able to buy too expensive item!")
   end
 
   def test_BecomeOwnerAtTrade
     itemToBuy.owner = previousOwner
     itemToBuy.activate
-    user.buy_item(itemToBuy)
+    user.buy_item?(itemToBuy)
     assert(user.get_items.length == 2, "user was not able to buy!")
     assert(itemToBuy.owner == user, "user is not the owner!")
   end
@@ -78,7 +79,7 @@ class UserTest < Test::Unit::TestCase
   def test_FailTradeBecauseItemIsInactive
     inactiveItemToBuy = Market::Item.named_priced("inactiveItem", 100)
     # item is inactive per default so we don't need to inactivate it here
-    user.buy_item(inactiveItemToBuy)
+    user.buy_item?(inactiveItemToBuy)
     # list test_ still be 2, since we couldn't buy the third item now
     assert(user.get_items.length == 2, "user was able to buy the inactive item!")
   end

@@ -3,6 +3,8 @@ require "app/market/item"
 
 class ItemTest < Test::Unit::TestCase
 
+  attr_accessor :item, :owner
+
   def setup
     item = Market::Item.named_priced("testItem", 100)
     owner = Market::User.named("John")
@@ -30,8 +32,7 @@ class ItemTest < Test::Unit::TestCase
 
   def test_BeInactiveAfterTrade
     user = Market::User.named("Jim")
-    itemToSell = Market::Item.named_priced("sellItem", 100)
-    user.buy_item(itemToSell)
-    assert(itemToSell.active == false, "item is still active!")
+    user.buy_item?(item)
+    assert(!item.active, "item is still active!")
   end
 end
