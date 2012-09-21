@@ -4,34 +4,35 @@ require "app/market/user"
 
 class ItemTest < Test::Unit::TestCase
 
-  def startup
-    @@item = Market::Item.named_priced("testItem", 100)
-    @@owner = Market::User.named("John")
-    item.owner = owner
-    item.active = true
-    item
-  end
-
-  def test_HaveName
+  def test_has_name
+    item = Market::Item.named_priced("testItem", 100)
     assert(item.name.to_s.include?("testItem"), "item has a wrong name!")
   end
 
-  def test_HavePrice
+  def test_has_price
+    item = Market::Item.named_priced("testItem", 100)
     assert(item.price == 100, "item has a wrong price!")
   end
 
-  def test_HaveOwner
-    assert(item.owner == owner, "item has an incorrect owner!")
+  def test_has_owner
+    item = Market::Item.named_priced("testItem", 100)
+    user = Market::User.named("John")
+    user.add_item(item)
+    assert(item.owner == user, "item has an incorrect owner!")
   end
 
-  def test_ChangeState
+  def test_changes_state
+    item = Market::Item.named_priced("testItem", 100)
     item.activate
-    assert(item.active == true, "item is still inactive!")
+    assert(item.active, "item is still inactive!")
   end
 
-  def test_BeInactiveAfterTrade
-    user = Market::User.named("Jim")
+  def test_is_inactive_after_trade
+    user = Market::User.named("Buyer")
+    item = Market::Item.named_priced("normalItem", 100)
+    owner = Market::User.named("Owner")
+    owner.add_item(item)
     user.buy_item?(item)
-    assert(!item.active, "item is still active!")
+    assert(!user.get_sell_items.include?(item), "item is still active!")
   end
 end

@@ -34,46 +34,52 @@ module Market
 
     # initialize the items array
     def initialize
-      items = Array.new
+      self.items = Array.new
     end
 
     # increase the balance
     # @param [Numeric] amount - amount to be added
-    def increaseCredit(amount)
+    def increase_credit(amount)
       self.credit += amount
     end
 
     # decrease the balance
     # @param [Numeric] amount - amount to be subtracted
-    def decreaseCredit(amount)
+    def decrease_credit(amount)
       self.credit -= amount
     end
 
     # add a specified item to the selling list
     # @param [Item] item - item to be added
     def add_item(item)
+      item.owner = self
       item.activate
       self.items.push(item)
     end
 
     # buy a specified item from another user
     # -> pay credits, change ownership, add item to user's list
+    # when a user has not enough credits, the trade is not acceptable
     # @param [Item] item - item to be bought
     def buy_item?(item)
+      return false if item == nil
+      return false if item.owner == nil
       return false if self.credit < item.price
+      return false if !item.active
 
-      decreaseCredit(item.price)
-      item.owner.increaseCredit(item.price)
+      self.decrease_credit(item.price)
+      item.owner.increase_credit(item.price)
       item.owner.remove_item_from_user(item)
       item.owner = self
       self.items.push(item)
-      return true
+      item.inactivate
     end
 
-    # remove item from user's list due to it being sold
+    # remove item from user's list
     # @param [Item] item - item to be removed
     def remove_item_from_user(item)
       self.items.delete(item)
+      item.owner = nil
     end
 
     # list of user's items to sell

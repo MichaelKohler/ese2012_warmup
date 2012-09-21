@@ -4,82 +4,101 @@ require "app/market/item"
 
 class UserTest < Test::Unit::TestCase
 
-  def startup
-    @@user = Market::User.named_credit("John", 200)
-    @@itemToBuy = Market::Item.named_priced("itemToBuy", 50)
-    @@previousOwner = Market::User.named("Jim")
-    user
-  end
-
-  def test_HaveName
+  def test_has_name
+    user = Market::User.named("John")
     assert(user.name.to_s.include?("John"), "name is not John!")
   end
 
-  def test_HaveCredit
+  def test_has_name_and_credit
+    user = Market::User.named_credit("John", 200)
+    assert(user.name.to_s.include?("John"), "name is not John!")
     assert(user.credit == 200, "credit is not 200!")
   end
 
-  def test_HaveInitialCredit
-    someUser = Market::User.named("Jim")
-    assert(someUser.credit == 100, "initial credit is not 100!")
+  def test_has_initial_credit
+    user = Market::User.named("Jim")
+    assert(user.credit == 100, "initial credit is not 100!")
   end
 
-  def test_HaveMoreCredit
-    user.increaseCredit(50)
-    assert(user.credit == 250, "credit is not 250!")
+  def test_has_more_credit
+    user = Market::User.named("Jim")
+    user.increase_credit(50)
+    assert(user.credit == 150, "credit is not 150!")
   end
 
-  def test_HaveLessCredit
-    user.decreaseCredit(50)
-    assert(user.credit == 200, "credit is not 200!")
+  def test_has_less_credit
+    user = Market::User.named("Hans")
+    user.decrease_credit(50)
+    assert(user.credit == 50, "credit is not 50!")
   end
 
-  def test_AddItem
+  def test_add_item
     # list is empty now
+    user = Market::User.named("DrMuster")
     assert(user.get_sell_items.length == 0, "sell list is not empty")
-    someItem = Market::Item.named_priced("someItem", 300)
-    someItem.owner = previousOwner
-    user.add_item(someItem)
-    assert(user.get_sell_items.include?(someItem), "item was not added!")
+    someitem = Market::Item.named_priced("someItem", 300)
+    someitem.owner = Market::User.named("Owner!")
+    user.add_item(someitem)
+    assert(user.get_sell_items.include?(someitem), "item was not added!")
   end
 
-  def test_ListAllSellItems
-    otherItem = Market::Item.named_priced("otherItem", 50)
-    otherItem.owner = previousOwner
-    user.add_item(otherItem);
-    # list test_ have 2 sell items now
+  def test_list_all_sell_items
+    otheritem = Market::Item.named_priced("otherItem", 50)
+    someitem = Market::Item.named_priced("someItem", 550)
+    otheritem.owner = Market::User.named("Owner!")
+    user = Market::User.named("Foo")
+    user.add_item(otheritem);
+    user.add_item(someitem)
+    # list should have 2 sell items now
     assert(user.get_sell_items.length == 2, "there are not 2 items in the sell list!")
-    assert(user.get_sell_items.include?(otherItem), "otherItem is not in the sell list!")
+    assert(user.get_sell_items.include?(otheritem), "otherItem is not in the sell list!")
+    assert(user.get_sell_items.include?(someitem), "someItem is not in the sell list!")
   end
 
-  def test_FailIfNotEnoughCredit
-    itemToBuy.price = 500
-    assert(!user.buy_item?(itemToBuy), "user was able to buy too expensive item!")
+  def test_fail_not_enough_credit
+    item = Market::Item.named_priced("reallyExpensiveItem", 5000)
+    user = Market::User.named("Buyer")
+    owner = Market::User.named("Owner")
+    owner.add_item(item)
+    assert(!user.buy_item?(item), "user was able to buy too expensive item!")
   end
 
-  def test_BecomeOwnerAtTrade
-    itemToBuy.owner = previousOwner
-    itemToBuy.activate
-    user.buy_item?(itemToBuy)
-    assert(user.get_items.length == 2, "user was not able to buy!")
-    assert(itemToBuy.owner == user, "user is not the owner!")
+  def test_become_owner_at_trade
+    user = Market::User.named("Buyer")
+    item = Market::Item.named_priced("normalItem", 100)
+    owner = Market::User.named("Owner")
+    owner.add_item(item)
+    user.buy_item?(item)
+    assert(user.get_items.length == 1, "user was not able to buy!")
+    assert(item.owner == user, "user is not the owner!")
   end
 
-  def test_TransferCreditAtTrade
-    # after test_BecomeOwnerAtTrade we test_ have 50 credits less
-    assert(user.credit == 150, "user has too much credit!")
+  def test_transfer_credit_at_trade
+    user = Market::User.named("Buyer")
+    item = Market::Item.named_priced("normalItem", 100)
+    owner = Market::User.named("Owner")
+    owner.add_item(item)
+    user.buy_item?(item)
+    assert(user.credit == 0, "user has too much credit!")
+    assert(owner.credit == 100, "owner has too less credit!")
   end
 
-  def test_RemoveItemFromUserAtTrade
-    assert(previousOwner.get_sell_items.include?(itemToBuy) == false, "user still has the item on his list!")
+  def test_removes_from_user
+    user = Market::User.named("Buyer")
+    item = Market::Item.named_priced("normalItem", 100)
+    owner = Market::User.named("Owner")
+    owner.add_item(item)
+    user.buy_item?(item)
+    assert(owner.get_sell_items.length == 0, "owner still has the item on his list!")
   end
 
-  def test_FailTradeBecauseItemIsInactive
-    inactiveItemToBuy = Market::Item.named_priced("inactiveItem", 100)
-    # item is inactive per default so we don't need to inactivate it here
-    user.buy_item?(inactiveItemToBuy)
-    # list test_ still be 2, since we couldn't buy the third item now
-    assert(user.get_items.length == 2, "user was able to buy the inactive item!")
+  def test_fail_inactive
+    user = Market::User.named("Buyer")
+    item = Market::Item.named_priced("normalItem", 100)
+    owner = Market::User.named("Owner")
+    owner.add_item(item)
+    item.inactivate
+    assert(!user.buy_item?(item), "user was able to buy the inactive item!")
   end
 
 end

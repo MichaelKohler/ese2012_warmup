@@ -16,6 +16,7 @@ module Market
       item.name = name
       item.price = price
       item.active = false
+      item.owner = nil
       item
     end
 
