@@ -11,27 +11,27 @@ class ItemTest < Test::Unit::TestCase
     item
   end
 
-  def shouldHaveName
+  def test_HaveName
     assert(item.name.to_s.include?("testItem"), "item has a wrong name!")
   end
 
-  def shouldHavePrice
+  def test_HavePrice
     assert(item.price == 100, "item has a wrong price!")
   end
 
-  def shouldHaveOwner
+  def test_HaveOwner
     assert(item.owner == owner, "item has an incorrect owner!")
   end
 
-  def shouldChangeState
+  def test_ChangeState
     item.activate
     assert(item.active == true, "item is still inactive!")
   end
 
-  def shouldBeInactiveAfterTrade
+  def test_BeInactiveAfterTrade
     user = Market::User.named("Jim")
     itemToSell = Market::Item.named_priced("sellItem", 100)
-    user.buyItem(itemToSell)
+    user.buy_item(itemToSell)
     assert(itemToSell.active == false, "item is still active!")
   end
 end
