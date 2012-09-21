@@ -2,10 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f694ca81-7975-4da7-8a80-3c2468037c3a" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/market/item.rb" afterPath="$PROJECT_DIR$/app/market/item.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/market/user.rb" afterPath="$PROJECT_DIR$/app/market/user.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/test_item.rb" afterPath="$PROJECT_DIR$/test/test_item.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/test_user.rb" afterPath="$PROJECT_DIR$/test/test_user.rb" />
     </list>
     <ignored path="ese2012_warmup.iws" />
@@ -59,7 +55,7 @@
       <file leaf-file-name="test_user.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test/test_user.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="76" column="24" selection-start="2566" selection-end="2566" vertical-scroll-proportion="0.42262894">
+            <state line="49" column="28" selection-start="1525" selection-end="1525" vertical-scroll-proportion="0.19800332">
               <folding />
             </state>
           </provider>
@@ -80,8 +76,8 @@
       <list>
         <option value="$PROJECT_DIR$/app/market/item.rb" />
         <option value="$PROJECT_DIR$/test/test_item.rb" />
-        <option value="$PROJECT_DIR$/test/test_user.rb" />
         <option value="$PROJECT_DIR$/app/market/user.rb" />
+        <option value="$PROJECT_DIR$/test/test_user.rb" />
       </list>
     </option>
   </component>
@@ -557,7 +553,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/test/test_user.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="76" column="24" selection-start="2566" selection-end="2566" vertical-scroll-proportion="0.42262894">
+        <state line="49" column="28" selection-start="1525" selection-end="1525" vertical-scroll-proportion="0.19800332">
           <folding />
         </state>
       </provider>

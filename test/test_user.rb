@@ -47,7 +47,7 @@ class UserTest < Test::Unit::TestCase
     someitem = Market::Item.named_priced("someItem", 550)
     otheritem.owner = Market::User.named("Owner!")
     user = Market::User.named("Foo")
-    user.add_item(otheritem);
+    user.add_item(otheritem)
     user.add_item(someitem)
     # list should have 2 sell items now
     assert(user.get_sell_items.length == 2, "there are not 2 items in the sell list!")
