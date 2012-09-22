@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f694ca81-7975-4da7-8a80-3c2468037c3a" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/market/user.rb" afterPath="$PROJECT_DIR$/app/market/user.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/test_user.rb" afterPath="$PROJECT_DIR$/test/test_user.rb" />
     </list>
     <ignored path="ese2012_warmup.iws" />
@@ -28,7 +30,7 @@
       <file leaf-file-name="user.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/market/user.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="90" column="8" selection-start="2717" selection-end="2726" vertical-scroll-proportion="0.0">
+            <state line="79" column="27" selection-start="2497" selection-end="2497" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -55,7 +57,7 @@
       <file leaf-file-name="test_user.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test/test_user.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="49" column="28" selection-start="1525" selection-end="1525" vertical-scroll-proportion="0.19800332">
+            <state line="82" column="11" selection-start="2795" selection-end="2795" vertical-scroll-proportion="0.33333334">
               <folding />
             </state>
           </provider>
@@ -113,7 +115,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -156,16 +157,17 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="options.lastSelected" value="preferences.editor" />
     <property name="recentsLimit" value="5" />
+    <property name="options.lastSelected" value="preferences.editor" />
     <property name="last_opened_file_path" value="/usr/bin/ruby" />
-    <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="RunManager" selected="Test::Unit/Shoulda/Minitest.All tests in: ese2012_warmup">
     <configuration default="false" name="user" type="RubyRunConfigurationType" factoryName="Ruby" temporary="true">
@@ -385,11 +387,11 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3290735" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32954547" sideWeight="0.73003197" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.26136363" sideWeight="0.73003197" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26136363" sideWeight="0.73003197" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32954547" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.26996806" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" x="27" y="189" width="1320" height="169" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26996806" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" x="27" y="189" width="1320" height="169" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3290735" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -453,6 +455,13 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/test/test_user.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="49" column="28" selection-start="1525" selection-end="1525" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/market/item.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="28" column="10" selection-start="648" selection-end="648" vertical-scroll-proportion="0.0">
@@ -525,7 +534,12 @@
     </entry>
     <entry file="file://$APPLICATION_HOME_DIR$/rb/testing/patch/testunit/test/unit/ui/teamcity/testrunner.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="80" column="0" selection-start="2329" selection-end="2329" vertical-scroll-proportion="0.33333334">
+        <state line="80" column="0" selection-start="2329" selection-end="2329" vertical-scroll-proportion="0.33333334" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/test_item.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="35" column="0" selection-start="988" selection-end="988" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -539,21 +553,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/market/user.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="90" column="8" selection-start="2717" selection-end="2726" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/test_item.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="0" selection-start="988" selection-end="988" vertical-scroll-proportion="0.0">
+        <state line="79" column="27" selection-start="2497" selection-end="2497" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test/test_user.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="49" column="28" selection-start="1525" selection-end="1525" vertical-scroll-proportion="0.19800332">
+        <state line="82" column="11" selection-start="2795" selection-end="2795" vertical-scroll-proportion="0.33333334">
           <folding />
         </state>
       </provider>

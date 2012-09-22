@@ -71,8 +71,8 @@ module Market
       item.owner.increase_credit(item.price)
       item.owner.remove_item_from_user(item)
       item.owner = self
-      self.items.push(item)
       item.inactivate
+      self.items.push(item)
     end
 
     # remove item from user's list

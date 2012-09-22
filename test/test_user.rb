@@ -80,7 +80,7 @@ class UserTest < Test::Unit::TestCase
     owner.add_item(item)
     user.buy_item?(item)
     assert(user.credit == 0, "user has too much credit!")
-    assert(owner.credit == 100, "owner has too less credit!")
+    assert(owner.credit == 200, "owner has too less credit!")
   end
 
   def test_removes_from_user
