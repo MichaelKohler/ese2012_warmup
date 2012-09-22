@@ -1,6 +1,16 @@
 require "test/unit"
-require "app/market/item"
-require "app/market/user"
+#require "app/market/item.rb"
+#require "app/market/user.rb"
+# To use relative imports, I found 
+
+def relative path
+  File.join(File.dirname(__FILE__), path)
+end
+require relative('../app/market/item')
+require relative('../app/market/user')
+
+# to be working
+
 
 class ItemTest < Test::Unit::TestCase
 
@@ -33,6 +43,6 @@ class ItemTest < Test::Unit::TestCase
     owner = Market::User.named("Owner")
     owner.add_item(item)
     user.buy_item?(item)
-    assert(!user.get_sell_items.include?(item), "item is still active!")
+    assert(! user.get_sell_items.include?(item), "item is still active!")
   end
 end

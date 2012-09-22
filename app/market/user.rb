@@ -26,6 +26,10 @@ module Market
     # @param [String] name - name of the user
     # @param [Numeric] credit - initial credit balance
     def self.named_credit(name, credit)
+      # AK If you find yourself writing many very similar
+      # constructors, I suggest passing a dictionary of 
+      # symbols instead:
+      # http://deepfall.blogspot.ch/2008/08/named-parameters-in-ruby.html
       user = self.new
       user.name = name
       user.credit = credit
@@ -34,7 +38,8 @@ module Market
 
     # initialize the items array
     def initialize
-      self.items = Array.new
+      self.items = Array.new # AK it is better to write 
+      self.items = [] # and `{}` for empty dictionaries
     end
 
     # increase the balance
@@ -54,7 +59,8 @@ module Market
     def add_item(item)
       item.owner = self
       item.activate
-      self.items.push(item)
+      self.items.push(item) # AK There is also
+      # self.items << item
     end
 
     # buy a specified item from another user
@@ -67,6 +73,8 @@ module Market
       return false if self.credit < item.price
       return false if !item.active
 
+      # AK methods ending in `?` should not change the state of the 
+      # object. You can of course write `buy_item(item) if buy_item?(item)`
       self.decrease_credit(item.price)
       item.owner.increase_credit(item.price)
       item.owner.remove_item_from_user(item)
@@ -77,18 +85,18 @@ module Market
 
     # remove item from user's list
     # @param [Item] item - item to be removed
-    def remove_item_from_user(item)
+    def remove_item_from_user(item) # AK this name is a bit redundant, isn't it?
       self.items.delete(item)
       item.owner = nil
     end
 
     # list of user's items to sell
-    def get_sell_items
+    def get_sell_items # AK you seldom name it `get_...`
       self.items.select { |item| item.active }
     end
 
     # list of user's items
-    def get_items
+    def get_items # this doubles the accessor (items is aleady public)
       self.items
     end
   end

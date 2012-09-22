@@ -1,7 +1,19 @@
 require "test/unit"
-require "app/market/user"
-require "app/market/item"
+#require "app/market/item.rb"
+#require "app/market/user.rb"
+# To use relative imports, I found 
 
+def relative path
+  File.join(File.dirname(__FILE__), path)
+end
+require relative('../app/market/item')
+require relative('../app/market/user')
+
+# to be working
+
+# AK you can use
+#include Market
+# to access the User and Item without the namespace
 class UserTest < Test::Unit::TestCase
 
   def test_has_name
