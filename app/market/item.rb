@@ -9,14 +9,13 @@ module Market
     attr_accessor :name, :price, :owner, :active
 
     # constructor - give a name to the item and set a specified price
-    # @param [String] name - name of the item
-    # @param [Numeric] price - price of the item
-    def self.named_priced(name, price)
+    # @param [Object] params - dictionary of symbols
+    def self.init(params={})
       item = self.new
-      item.name = name
-      item.price = price
-      item.active = false
-      item.owner = nil
+      item.name = params[:name] || "default item"
+      item.price = params[:price] || 0
+      item.active = params[:active] || false
+      item.owner = params[:owner]
       item
     end
 

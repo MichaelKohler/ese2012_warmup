@@ -13,33 +13,18 @@ module Market
 
     attr_accessor :name, :credit, :items
 
-    # constructor - name only and give an initial balance of 100 credits
-    # @param [String] name - name of the user
-    def self.named(name)
+    # constructor - initializes the user and gives a credit of 100 if nothing else is specified
+    # @param [Object] params - dictionary of symbols
+    def self.init(params={})
       user = self.new
-      user.name = name
-      user.credit = 100
-      user
-    end
-
-    # constructor - give a name and an specified initial balance of credits
-    # @param [String] name - name of the user
-    # @param [Numeric] credit - initial credit balance
-    def self.named_credit(name, credit)
-      # AK If you find yourself writing many very similar
-      # constructors, I suggest passing a dictionary of 
-      # symbols instead:
-      # http://deepfall.blogspot.ch/2008/08/named-parameters-in-ruby.html
-      user = self.new
-      user.name = name
-      user.credit = credit
+      user.name = params[:name] || "default user"
+      user.credit = params[:credit] || 100
       user
     end
 
     # initialize the items array
     def initialize
-      self.items = Array.new # AK it is better to write 
-      self.items = [] # and `{}` for empty dictionaries
+      self.items = []
     end
 
     # increase the balance
@@ -59,45 +44,39 @@ module Market
     def add_item(item)
       item.owner = self
       item.activate
-      self.items.push(item) # AK There is also
-      # self.items << item
+      self.items << item
+    end
+
+    # checks if a user can buy the specified item
+    # when a user has not enough credits, the trade is not acceptable
+    # also the item should be active so it can be bought
+    # @param [Item] item - item to be bought
+    def buy_item?(item)
+      return true unless item == nil || item.owner == nil || self.credit < item.price || !item.active
     end
 
     # buy a specified item from another user
     # -> pay credits, change ownership, add item to user's list
-    # when a user has not enough credits, the trade is not acceptable
     # @param [Item] item - item to be bought
-    def buy_item?(item)
-      return false if item == nil
-      return false if item.owner == nil
-      return false if self.credit < item.price
-      return false if !item.active
-
-      # AK methods ending in `?` should not change the state of the 
-      # object. You can of course write `buy_item(item) if buy_item?(item)`
+    def buy_item(item)
       self.decrease_credit(item.price)
       item.owner.increase_credit(item.price)
-      item.owner.remove_item_from_user(item)
+      item.owner.remove_from_user(item)
       item.owner = self
       item.inactivate
-      self.items.push(item)
+      self.items << item
     end
 
-    # remove item from user's list
+    # remove item from user's list and set the item's owner to nil
     # @param [Item] item - item to be removed
-    def remove_item_from_user(item) # AK this name is a bit redundant, isn't it?
+    def remove_from_user(item)
       self.items.delete(item)
       item.owner = nil
     end
 
     # list of user's items to sell
-    def get_sell_items # AK you seldom name it `get_...`
+    def sell_items
       self.items.select { |item| item.active }
-    end
-
-    # list of user's items
-    def get_items # this doubles the accessor (items is aleady public)
-      self.items
     end
   end
 end
